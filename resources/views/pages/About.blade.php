@@ -1,6 +1,6 @@
 @extends('layouts.App')
 
-@section('title', 'Giới thiệu')
+@section('title', 'About - TodoList App')
 
 @section('content')
     <div class="container py-5">
@@ -21,11 +21,17 @@
                 <p class="text-muted">
                     Xây dựng với <strong>Laravel</strong> & <strong>Bootstrap</strong>, giao diện hiện đại, responsive, dễ sử dụng.
                 </p>
+
+                <div class="container mt-5 d-flex justify-content-center">
+                    <a href="{{ url('/register') }}" class="btn btn-dark w-25">Start</a>
+                </div>
+
             </div>
 
             <!-- Hình ảnh minh hoạ bên phải -->
             <div class="col-md-6 text-center">
-                <img src="https://thumbs.dreamstime.com/b/to-do-list-icon-hand-drawn-text-checklist-task-list-vecto-vector-illustration-flat-style-white-background-96388297.jpg" alt="TodoList Illustration" class="img-fluid rounded shadow w-75">
+                <img src="{{ asset('images/To-do-image.jpg') }}" alt="TodoList Illustration" class="img-fluid rounded shadow " style="max-width: 70% ">
+                {{-- {{}} để in ra giá trị của hàm asset tạo ra đường dẫn đến file nằm trong thư mục public --}}
             </div>
         </div>
     </div>

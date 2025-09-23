@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models; // khai báo namespace của class User, cho biết class này thuộc về thư mục app/Models trong ứng dụng Laravel
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,14 +9,14 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    // user kế thừa từ lớp Authenticatable, cung cấp các tính năng xác thực người dùng
+    use HasFactory, Notifiable; // hasFactory tạo dữ liệu mẫu, Notifiable gửi thông báo
 
     /**
-     * The attributes that are mass assignable.
-     *
+     * Các thuộc tính có thể gán hàng loạt.
      * @var list<string>
      */
+
     protected $fillable = [
         'name',
         'email',
@@ -24,10 +24,10 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
+     * Các thuộc tính cần ẩn để tuần tự hóa.
      * @var list<string>
      */
+
     protected $hidden = [
         'password',
         'remember_token',
